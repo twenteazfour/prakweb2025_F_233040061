@@ -6,13 +6,24 @@
 </head>
 <body>
     <h2>Daftar User</h2>
-    <ul>
+    <a href="?c=User&a=tambah">+ Tambah User</a>
+    <br><br>
+    <table border="1" cellpadding="8" cellspacing="0">
+        <tr>
+            <th>ID</th><th>Nama</th><th>Email</th><th>Aksi</th>
+        </tr>
         <?php foreach ($users as $u): ?>
-            <li>
-                <?= $u['nama'] ?> - <?= $u['email'] ?> -
-                <a href="?c=User&a=detail&id=<?= $u['id'] ?>">Detail</a>
-            </li>
+        <tr>
+            <td><?= $u['id'] ?></td>
+            <td><?= $u['nama'] ?></td>
+            <td><?= $u['email'] ?></td>
+            <td>
+                <a href="?c=User&a=detail&id=<?= $u['id'] ?>">Detail</a> |
+                <a href="?c=User&a=edit&id=<?= $u['id'] ?>">Edit</a> |
+                <a href="?c=User&a=hapus&id=<?= $u['id'] ?>" onclick="return confirm('Yakin hapus?')">Hapus</a>
+            </td>
+        </tr>
         <?php endforeach; ?>
-    </ul>
+    </table>
 </body>
 </html>
