@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en"></html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM</title>
+</head>
+<body>
+    <h1 id ="judul">Hello World!</h1>
+
+    <p id="paragraf">paragraf 1</p>
+
+    <button id="ubah">Ubah P1</button>
+    <button id="ubah">Ubah Judul</button>
+
+    <script>
+        //seleksi tag button
+        const btn = document.getElementById("ubah");
+
+        // seleksi tag paragraf
+        const p1 = document.getElementById("p");
+
+        function ubahParagraf(){
+            // ubah bg paragraf jadi merah
+            p.style.backgroundColor = "red";
+        }
+
+        //ketika btn di klik maka panggil function ubahParagraf
+        btn.onclick = ubahParagraf;
+
+        // penggunaan event handler "addeventlistener"
+        const judul = document.getElementById("judul");
+        const ubahJudul = document.getElementById("ubahJudul");
+
+        ubahJudul.addEventListener("click", function(){
+            alert('Judul berhasil di ubah');
+            judul.innerHTML = "Selamat datang di DOM";
+        });
+    </script>
+</body>
+</html>
